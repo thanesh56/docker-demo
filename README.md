@@ -46,3 +46,8 @@
     #or
     # kubeclt port-forward svc/webapp-service <CUSTOME_LOCAL_PORT>:<K8S/SERVICE/POD PORT>
 ```
+
+### Delete your deployment
+```
+    kubectl delete -f springboot-k8s-deployment.yaml -n spring-docker-demo
+```
