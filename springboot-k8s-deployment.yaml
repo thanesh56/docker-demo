@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: spring-docker-demo
+  name: spring-docker-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spring-docker-demo
+  template:
+    metadata:
+      labels:
+        app: spring-docker-demo
+    spec:
+      containers:
+      - image: spring-docker-demo:1.0.1
+        name: spring-docker-demo
+        imagePullPolicy: Never
+        ports:
+           - containerPort: 8084
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-docker-service
+spec:
+  selector:
+    app: spring-docker-demo
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8084
+      targetPort: 8084
+      nodePort: 32200
