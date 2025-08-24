@@ -1,5 +1,13 @@
 # docker-demo
 
+### Start and check status of minikube
+```
+    docker version
+    minikube status 
+    minikube start --driver docker 
+    minikube status 
+```
+
 ### For building image
 ```
    docker build -t spring-docker-demo:1.0.1 .
