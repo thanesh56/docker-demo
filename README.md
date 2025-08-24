@@ -44,5 +44,5 @@
 ```
     minikube service spring-docker-service -n spring-docker-demo
     #or
-    # kubeclt port-forward svc/webapp-service <CUSTOME_HOST>:<K8S/SERVICE/POD>
+    # kubeclt port-forward svc/webapp-service <CUSTOME_LOCAL_PORT>:<K8S/SERVICE/POD PORT>
 ```
